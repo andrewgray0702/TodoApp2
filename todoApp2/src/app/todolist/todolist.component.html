@@ -1,0 +1,13 @@
+Refine Search: <input type="text" [(ngModel)]='refine'>
+Sort by:  
+<select [(ngModel)]='sortType'>
+    <option *ngIf="!isUserPage" value="username">Username</option>
+    <option value='id'>ID</option>
+    <option value='task'>Task</option>
+</select> 
+
+
+<div *ngFor="let td of todos | filter:refine | sort:sortType" [class.incomplete]="!td.completed">
+  id: {{td.id}} Name: {{td.task}} Username: <a [routerLink]="['/user/'+td.username]">{{td.username}}</a> Completed: {{td.completed}}
+  <button *ngIf="isUserPage" (click)="deleteTodo(td.id)">Delete Todo</button>
+</div>

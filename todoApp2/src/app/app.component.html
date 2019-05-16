@@ -1,0 +1,8 @@
+<div class="container"><h1>Welcome!</h1>
+<nav class="links">
+<a class="routeLink" routerLinkActive="active" [routerLink]="['/todo']">Todo</a>
+<a class="routeLink" routerLinkActive="active" [routerLink]="['/user']" [routerLinkActiveOptions]="{exact: true}">User</a>
+</nav>
+<br>
+<router-outlet></router-outlet>
+</div>
